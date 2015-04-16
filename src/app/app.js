@@ -1,25 +1,16 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name app [smartadminApp]
- * @description
- * # app [smartadminApp]
- *
- * Main module of the application.
- */
-
 define([
     'angular',
-     'angular-couch-potato',
-     'ui.router',
-     'angular-animate',
-     'angular-bootstrap',
-      'ngSanitize'
+    'angular-couch-potato',
+    'ui.router',
+    'angular-animate',
+    'angular-bootstrap',
+    'ngSanitize'
 ], function (ng, couchPotato) {
 
     var app = ng.module('app', [
-           'ngSanitize',
+         'ngSanitize',
          'scs.couch-potato',
          'ngAnimate',
          'ui.router',
@@ -31,22 +22,11 @@ define([
     couchPotato.configureApp(app);
 
     app.config(function ($provide, $httpProvider) {
-
-
-
         // Intercept http calls.
         $provide.factory('ErrorHttpInterceptor', function ($q) {
             var errorCounter = 0;
             function notifyError(rejection){
                 console.log(rejection);
-                $.bigBox({
-                    title: rejection.status + ' ' + rejection.statusText,
-                    content: rejection.data,
-                    color: "#C46A69",
-                    icon: "fa fa-warning shake animated",
-                    number: ++errorCounter,
-                    timeout: 6000
-                });
             }
 
             return {
@@ -54,7 +34,6 @@ define([
                 requestError: function (rejection) {
                     // show notification
                     notifyError(rejection);
-
                     // Return the promise rejection.
                     return $q.reject(rejection);
                 },
@@ -78,8 +57,6 @@ define([
         app.lazy = $couchPotato;
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
-        // editableOptions.theme = 'bs3';
     });
-
     return app;
 });

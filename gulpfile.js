@@ -4,9 +4,9 @@ var amdOptimize = require("amd-optimize");
 var concat = require('gulp-concat');
 var bower = require('gulp-bower');
 var plumber = require('gulp-plumber');
+var config = require('./gulp.config')();
 
 // var args = require('yargs').argv;
-// var config = require('./gulp.config')();
 // var minifyCSS = require('gulp-minify-css');
 // var uglify  = require('gulp-uglify');
 // var runSequence = require('run-sequence');
@@ -38,34 +38,34 @@ gulp.task('bowerInstall', function () {
 });
 
 gulp.task('cleanLib', function(done){
-    del(['wwwroot/lib/'], done);
+    del(config.paths.destExtLib, done);
 });
 
-gulp.task('copyLib',['cleanLib'], function() {
+gulp.task('Lib',['cleanLib'], function() {
   // place code for your default task here
-  return gulp.src(['./src/lib/**/*'])
-  .pipe(gulp.dest('./wwwroot/lib/'));
+  return gulp.src(config.paths.srcExtLib)
+  .pipe(gulp.dest(config.paths.destExtLib));
 });
 
 gulp.task('cleanApp', function(done){
-    del(['wwwroot/app/'], done);
+    del(config.paths.destApp, done);
 });
 
-gulp.task('copyApp',['cleanApp'], function() {
+gulp.task('App',['cleanApp'], function() {
   // place code for your default task here
-  return gulp.src(['./src/app/**/*'])
-  .pipe(gulp.dest('./wwwroot/app/'));
+  return gulp.src(config.paths.srcApp)
+  .pipe(gulp.dest(config.paths.destApp));
 });
 
 gulp.task('cleanStatic', function(done){
-    del(['./wwwroot/index.html','./wwwroot/main.js','./wwwroot/rconfig.js'], done);
+    del(config.paths.destStatic, done);
 });
 
-gulp.task('copyStatic',['cleanStatic'], function() {
+gulp.task('Static',['cleanStatic'], function() {
   // place code for your default task here
-  return gulp.src(['./src/index.html','./src/main.js','./src/rconfig.js','./src/includes.js'])
-  .pipe(gulp.dest('./wwwroot/'));
+  return gulp.src(config.paths.srcStatic)
+  .pipe(gulp.dest(config.paths.dest));
 });
 
-gulp.task('quickCopy',['copyApp','copyStatic']);
-gulp.task('longCopy',['copyLib','copyApp','copyStatic']);
+gulp.task('Quick',['App','Static']);
+gulp.task('Full',['Lib','App','Static']);
