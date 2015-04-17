@@ -5,13 +5,13 @@ define([
     'require',
     'jquery',
     'angular',
-    'ui.router',
+    'angular-ui-router',
     'domReady',
 
     //'pace',
     'bootstrap',
-    'app',
-    'includes'
+    'app/app',
+    'app/includes'
 ], function (require, $, ng, domReady) {
     'use strict';
 

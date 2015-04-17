@@ -3,7 +3,7 @@
 define([
     'angular',
     'angular-couch-potato',
-    'ui.router',
+    'angular-ui-router',
     'angular-animate',
     'angular-bootstrap',
     'ngSanitize'
@@ -21,7 +21,7 @@ define([
 
     couchPotato.configureApp(app);
 
-    app.config(function ($provide, $httpProvider) {
+    app.config(function ($provide, $httpProvider, $stateProvider, $urlRouterProvider) {
         // Intercept http calls.
         $provide.factory('ErrorHttpInterceptor', function ($q) {
             var errorCounter = 0;
@@ -50,6 +50,12 @@ define([
 
         // Add the interceptor to the $httpProvider.
         $httpProvider.interceptors.push('ErrorHttpInterceptor');
+        
+        $urlRouterProvider.otherwise('/');
+        $stateProvider.state('contact',{
+            url : '/contact',
+            templateUrl: 'app/contacts/views/contacts.html'
+        });
 
     });
 

@@ -11,10 +11,11 @@ requirejs.config({
         'angular-resource': 'lib/angular-resource/angular-resource.min',
         'angular-sanitize': 'lib/angular-sanitize/angular-sanitize.min',
         'angular-animate': 'lib/angular-animate/angular-animate.min',
+        'angular-resource': 'lib/angular-resource/angular-resource.min',
 
         'domReady': 'lib/requirejs-domready/domReady',
 
-        'ui.router': 'lib/angular-ui-router/release/angular-ui-router.min',
+        'angular-ui-router': 'lib/angular-ui-router/release/angular-ui-router.min',
 
         'angular-google-maps': 'lib/angular-google-maps/dist/angular-google-maps.min',
 
@@ -23,12 +24,12 @@ requirejs.config({
         'angular-couch-potato': 'lib/angular-couch-potato/dist/angular-couch-potato',
         'ngSanitize' : 'lib/angular-sanitize/angular-sanitize.min',
         // app js file includes
-        'includes': 'includes',
-        'app':'app/app'
+        // 'includes': 'includes',
+        // 'app':'app'
     },
     shim: {
         'angular': {'exports': 'angular', deps: ['jquery']},
-        'ui.router' : {deps:['angular']},
+        'angular-ui-router' : {deps:['angular']},
         'angular-animate': { deps: ['angular'] },
         'angular-resource': { deps: ['angular'] },
         'angular-cookies': { deps: ['angular'] },

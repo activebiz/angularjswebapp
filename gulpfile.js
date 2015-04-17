@@ -69,3 +69,8 @@ gulp.task('Static',['cleanStatic'], function() {
 
 gulp.task('Quick',['App','Static']);
 gulp.task('Full',['Lib','App','Static']);
+
+gulp.task('DevWatch', function() {
+    gulp.watch([config.paths.srcStatic], ['Static']);
+    gulp.watch([config.paths.srcApp], ['App']);
+});
