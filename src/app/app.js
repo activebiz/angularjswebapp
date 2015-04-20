@@ -14,9 +14,9 @@ define([
          'scs.couch-potato',
          'ngAnimate',
          'ui.router',
-         'ui.bootstrap'
+         'ui.bootstrap',
         // // App
-        // 'app.auth'
+         'app.contacts'
     ]);
 
     couchPotato.configureApp(app);
@@ -51,11 +51,12 @@ define([
         // Add the interceptor to the $httpProvider.
         $httpProvider.interceptors.push('ErrorHttpInterceptor');
         
-        $urlRouterProvider.otherwise('/');
-        $stateProvider.state('contact',{
-            url : '/contact',
-            templateUrl: 'app/contacts/views/contacts.html'
-        });
+        // $urlRouterProvider.otherwise('/');
+        // $stateProvider.state('contact',{
+        //     url : '/contact',
+        //     templateUrl: 'app/contacts/views/contacts.html',
+        //     controller: 'ContactCtrl'
+        // });
 
     });
 

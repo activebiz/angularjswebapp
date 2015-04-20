@@ -13,15 +13,15 @@ define([
 
     module.config(function ($stateProvider, $couchPotatoProvider) {
         $stateProvider
-            .state('app.contacts', {
+            .state('contacts', {
                 url: '/contacts',
                 views: {
-                    "content@app": {
-                        controller: 'ContactsCtrl',
+                    root: {
                         templateUrl: 'app/contacts/views/contacts.html',
-                        // resolve: {
-                        //     deps: $couchPotatoProvider.resolveDependencies()
-                        // }
+                        controller: 'ContactCtrl',
+                        resolve: {
+                            deps: $couchPotatoProvider.resolveDependencies()
+                        }
                     }
                 },
                 data:{

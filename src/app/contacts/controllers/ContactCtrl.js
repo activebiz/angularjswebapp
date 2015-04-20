@@ -1,7 +1,7 @@
-define(function () {
+define(['app/contacts/module'],
+    function (module) {
     'use strict';
-
-    // module.registerController('ContactsCtrl', function ($scope) {
-
-    // });
+    module.registerController('ContactCtrl', function ($scope, $interval) {
+        $scope.message = "hello"
+    });
 });
