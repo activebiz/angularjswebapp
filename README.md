@@ -8,6 +8,7 @@ Currently it includes following:
 - Angularjs
 - Twitter Bootstrap
 - ui-router
+- simple gulp task manager (currently only copying files)
 
 
 <more to follow>
