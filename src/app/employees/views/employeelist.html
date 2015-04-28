@@ -1,9 +1,35 @@
 <!-- MAIN CONTENT -->
 <div id="content"  ng-controller="EmployeesCtrl">
     <h2>{{title}}&nbsp;</h2>
-    <div ng-repeat="employee in employees">
-        <label>Name : </label><input ng-model="employee.name"></input>
-        <label>Age : </label><input ng-model="employee.age"></input>
+    <div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="employee in employees">
+            <tr>
+                <td>{{employee.name}}</td>
+                <td>{{employee.age}}</td>
+            </tr>
+        </tbody>        
+    </table>
     </div>
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" ng-model="newEmployee.name"></input>    
+        </div>
+        <div class="form-group">
+            <label for="Age">Age</label>
+            <input type="text" ng-model="newEmployee.age"></input>    
+        </div>        
+        <button ng-click="add()" type="submit"  class="btn btn-default">Add New Employee</button>
+    </form>
+    <div>
+    </div>
+    
 </div>
 <!-- END MAIN CONTENT -->
