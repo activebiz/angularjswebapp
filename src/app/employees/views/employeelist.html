@@ -1,0 +1,9 @@
+<!-- MAIN CONTENT -->
+<div id="content"  ng-controller="EmployeesCtrl">
+    <h2>{{title}}&nbsp;</h2>
+    <div ng-repeat="employee in employees">
+        <label>Name : </label><input ng-model="employee.name"></input>
+        <label>Age : </label><input ng-model="employee.age"></input>
+    </div>
+</div>
+<!-- END MAIN CONTENT -->
