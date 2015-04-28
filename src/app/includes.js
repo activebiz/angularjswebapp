@@ -2,8 +2,12 @@ define([
     // account
     // 'auth/module',
     // 'auth/models/User',
-    './contacts/module',
-    './contacts/controllers/ContactCtrl.js',
+    'dashboard/module',
+    'dashboard/controllers/DashboardCtrl',
+    'employees/module',
+    'employees/controllers/EmployeesCtrl',
+    //'contacts/module',
+    //'contacts/controllers/ContactCtrl.js',
 
 
 ], function () {

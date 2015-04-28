@@ -7,31 +7,33 @@ define([
     'angular-animate',
     'angular-bootstrap',
     'ngSanitize'
-], function (ng, couchPotato) {
+], function(ng, couchPotato) {
 
     var app = ng.module('app', [
-         'ngSanitize',
-         'scs.couch-potato',
-         'ngAnimate',
-         'ui.router',
-         'ui.bootstrap',
+        'ngSanitize',
+        'scs.couch-potato',
+        'ngAnimate',
+        'ui.router',
+        'ui.bootstrap',
         // // App
-         'app.contacts'
+        'app.dashboard',
+        'app.employees',
     ]);
 
     couchPotato.configureApp(app);
 
-    app.config(function ($provide, $httpProvider, $stateProvider, $urlRouterProvider) {
+    app.config(function($provide, $httpProvider, $stateProvider, $urlRouterProvider) {
         // Intercept http calls.
-        $provide.factory('ErrorHttpInterceptor', function ($q) {
+        $provide.factory('ErrorHttpInterceptor', function($q) {
             var errorCounter = 0;
-            function notifyError(rejection){
+
+            function notifyError(rejection) {
                 console.log(rejection);
             }
 
             return {
                 // On request failure
-                requestError: function (rejection) {
+                requestError: function(rejection) {
                     // show notification
                     notifyError(rejection);
                     // Return the promise rejection.
@@ -39,7 +41,7 @@ define([
                 },
 
                 // On response failure
-                responseError: function (rejection) {
+                responseError: function(rejection) {
                     // show notification
                     notifyError(rejection);
                     // Return the promise rejection.
@@ -50,17 +52,27 @@ define([
 
         // Add the interceptor to the $httpProvider.
         $httpProvider.interceptors.push('ErrorHttpInterceptor');
-        
-        // $urlRouterProvider.otherwise('/');
-        // $stateProvider.state('contact',{
-        //     url : '/contact',
-        //     templateUrl: 'app/contacts/views/contacts.html',
-        //     controller: 'ContactCtrl'
+
+        $urlRouterProvider.otherwise('/dashboard');
+        // // $urlRouterProvider.otherwise('/');
+        // $stateProvider.state('home', {
+        //     url: "/",
+        //     views: {
+        //         'header': {
+        //             templateUrl: 'app/common/templates/header.tpl.html'
+        //         },
+        //         'content': {
+        //             templateUrl: 'app/common/templates/content.tpl.html'
+        //         },
+        //         'footer': {
+        //             templateUrl: 'app/common/templates/footer.tpl.html'
+        //         },
+        //     }
         // });
 
     });
 
-    app.run(function ($couchPotato, $rootScope, $state, $stateParams) {
+    app.run(function($couchPotato, $rootScope, $state, $stateParams) {
         app.lazy = $couchPotato;
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
