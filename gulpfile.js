@@ -53,7 +53,7 @@ gulp.task('cleanApp', function(done){
 
 gulp.task('App',['cleanApp'], function() {
   // place code for your default task here
-  return gulp.src(config.paths.srcApp)
+  return gulp.src(config.paths.srcApp, {base: config.paths.src})
   .pipe(gulp.dest(config.paths.destApp));
 });
 
@@ -63,12 +63,22 @@ gulp.task('cleanStatic', function(done){
 
 gulp.task('Static',['cleanStatic'], function() {
   // place code for your default task here
-  return gulp.src(config.paths.srcStatic)
+  return gulp.src(config.paths.srcStatic, {base: config.paths.src})
   .pipe(gulp.dest(config.paths.dest));
 });
 
-gulp.task('Quick',['App','Static']);
-gulp.task('Full',['Lib','App','Static']);
+gulp.task('cleanApi', function(done){
+    del(config.paths.destApi, done);
+});
+
+gulp.task('Api',['cleanApi'], function() {
+  // place code for your default task here
+  return gulp.src(config.paths.srcApi, {base: config.paths.src})
+  .pipe(gulp.dest(config.paths.dest));
+});
+
+gulp.task('Quick',['App','Static','Api']);
+gulp.task('Full',['Lib','App','Static', 'Api']);
 
 gulp.task('DevWatch', function() {
     gulp.watch([config.paths.srcStatic], ['Static']);

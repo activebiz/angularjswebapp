@@ -55,7 +55,9 @@ module.exports = function() {
         srcExtLib : 'src/lib/**/*',
         destExtLib :'wwwroot/lib/',
         srcApp: 'src/app/**/*',
-        destApp: 'wwwroot/app/'
+        destApp: 'wwwroot/app/',
+        srcApi: 'src/api/**/*',
+        destApi: 'wwwroot/api/'
     };
 
     var config = {
