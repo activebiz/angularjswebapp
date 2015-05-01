@@ -18,6 +18,7 @@ define([
         // // App
         'app.dashboard',
         'app.employees',
+        'app.projects',
     ]);
 
     couchPotato.configureApp(app);

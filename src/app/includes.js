@@ -6,6 +6,8 @@ define([
     'dashboard/controllers/DashboardCtrl',
     'employees/module',
     'employees/controllers/EmployeesCtrl',
+    'projects/module',
+    'projects/controllers/ProjectCtrl',
     //'contacts/module',
     //'contacts/controllers/ContactCtrl.js',
 
