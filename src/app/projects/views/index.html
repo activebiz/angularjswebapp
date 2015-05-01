@@ -1,5 +1,25 @@
 <!-- MAIN CONTENT -->
 <div id="content"  ng-controller="ProjectCtrl">
     <h2>{{title}}&nbsp;</h2>
+    <div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="project in projects">
+            <tr>
+                <td ng-bind-html="project.name">{{project.name}}</td>
+                <td ng-bind-html="project.status">{{project.status}}</td>
+                <td ng-bind-html="project.starts">{{project.starts}}</td>
+                <td ng-bind-html="project.ends">{{project.ends}}</td>
+            </tr>
+        </tbody>        
+    </table>
+    </div>
 </div>
 <!-- END MAIN CONTENT -->
