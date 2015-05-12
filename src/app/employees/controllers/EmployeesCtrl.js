@@ -1,4 +1,4 @@
-define(['employees/module'], function (module) {
+define(['employees/module','toastr'], function (module,toastr) {
 
     'use strict';
 
@@ -9,6 +9,7 @@ define(['employees/module'], function (module) {
             if($scope.newEmployee !== undefined)
             {
                 $scope.employees.push($scope.newEmployee);
+                toastr.info($scope.newEmployee.name +' added!!');
                 $scope.newEmployee = undefined;
             }
         };

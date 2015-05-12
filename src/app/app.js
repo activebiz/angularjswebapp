@@ -55,22 +55,6 @@ define([
         $httpProvider.interceptors.push('ErrorHttpInterceptor');
 
         $urlRouterProvider.otherwise('/dashboard');
-        // // $urlRouterProvider.otherwise('/');
-        // $stateProvider.state('home', {
-        //     url: "/",
-        //     views: {
-        //         'header': {
-        //             templateUrl: 'app/common/templates/header.tpl.html'
-        //         },
-        //         'content': {
-        //             templateUrl: 'app/common/templates/content.tpl.html'
-        //         },
-        //         'footer': {
-        //             templateUrl: 'app/common/templates/footer.tpl.html'
-        //         },
-        //     }
-        // });
-
     });
 
     app.run(function($couchPotato, $rootScope, $state, $stateParams) {

@@ -2,11 +2,12 @@ define(['projects/module', 'projects/services/projectsService'], function (modul
 
     'use strict';
 
-    module.registerController('ProjectCtrl', function ($scope,projectsService) {
+    module.registerController('ProjectCtrl', function ($scope,projectsService,$templateCache) {
         $scope.title = 'Project List';
         projectsService.get(function(data){
 			$scope.projects = data.data;
 		});
+		console.log($templateCache.get('test.html'));
     });
 
 });

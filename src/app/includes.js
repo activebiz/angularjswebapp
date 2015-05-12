@@ -2,6 +2,8 @@ define([
     // account
     // 'auth/module',
     // 'auth/models/User',
+    'common/module',
+    'common/services/authInterceptorService',
     'dashboard/module',
     'dashboard/controllers/DashboardCtrl',
     'employees/module',

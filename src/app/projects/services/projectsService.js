@@ -1,7 +1,11 @@
-define(['app'], function(app){
+define(['projects/module',
+    'angular',
+    'angular-couch-potato',
+    'angular-ui-router'
+], function(module, ng, couchPotato) {
     "use strict";
 
-	    return app.factory('projectsService', function($http,$log) {
+	    module.registerService('projectsService', function($http,$log) {
 
 		function getProjects(callback){
 

@@ -23,6 +23,7 @@ var require = {
 
         'angular-couch-potato': '../lib/angular-couch-potato/dist/angular-couch-potato',
         'ngSanitize' : '../lib/angular-sanitize/angular-sanitize.min',
+        'toastr' : '../lib/toastr/toastr',
         // app js file includes
         'modules-includes': 'includes'
     },
