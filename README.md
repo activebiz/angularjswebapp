@@ -10,6 +10,11 @@ Currently it includes following:
 - ui-router
 - simple gulp task manager (currently only copying files)
 
+*Setup Steps*
+- install gulp globally and for dev
+- run npm install --save-dev
+- run npm install
+
 
 <more to follow>
 
