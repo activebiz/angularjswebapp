@@ -8,7 +8,8 @@ Currently it includes following:
 - Angularjs
 - Twitter Bootstrap
 - ui-router
-- simple gulp task manager (currently only copying files)
+- simple gulp task manager
+- global exception handling in angularjs (using toastr)
 
 *Setup Steps*
 - install gulp globally and for dev
