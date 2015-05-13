@@ -3,12 +3,12 @@
 define([
     'angular',
     'angular-couch-potato',
+    'toastr',
     'angular-ui-router',
     'angular-animate',
     'angular-bootstrap',
     'ngSanitize'
-], function(ng, couchPotato) {
-
+], function(ng, couchPotato, toastr) {
     var app = ng.module('app', [
         'ngSanitize',
         'scs.couch-potato',
@@ -53,6 +53,31 @@ define([
 
         // Add the interceptor to the $httpProvider.
         $httpProvider.interceptors.push('ErrorHttpInterceptor');
+
+        $provide.factory('$exceptionHandler', function() {
+            return function(exception, cause) {
+                // exception.message += ' (caused by "' + cause + '")';
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": true,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-bottom-full-width",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+                toastr.error(exception.message, cause);
+                throw exception;
+            };
+        });
 
         $urlRouterProvider.otherwise('/dashboard');
     });
