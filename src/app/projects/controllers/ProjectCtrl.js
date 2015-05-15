@@ -7,7 +7,6 @@ define(['projects/module', 'projects/services/projectsService'], function (modul
         projectsService.get(function(data){
 			$scope.projects = data.data;
 		});
-		console.log($templateCache.get('test.html'));
     });
 
 });

@@ -21,6 +21,7 @@ define([
                         templateUrl: 'app/dashboard/views/dashboard.html',
                         resolve: {
                             deps: $couchPotatoProvider.resolveDependencies([
+                                'dashboard/directives/bnSlideShow',
                                 'dashboard/controllers/DashboardCtrl'
                             ])
                         }

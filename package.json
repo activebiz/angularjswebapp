@@ -18,7 +18,8 @@
     "gulp-processhtml": "*",
     "gulp-sass": "*",
     "gulp-uglify": "*",
-    "gulp-watch": "*"
+    "gulp-watch": "*",
+    "mongodb": "~2.0"
   },
   "devDependencies": {
     "amd-optimize": "^0.4.3",

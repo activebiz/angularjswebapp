@@ -4,6 +4,7 @@ define([
     // 'auth/models/User',
     'common/module',
     'common/services/authInterceptorService',
+    'dashboard/directives/bnSlideShow',
     'dashboard/module',
     'dashboard/controllers/DashboardCtrl',
     'employees/module',

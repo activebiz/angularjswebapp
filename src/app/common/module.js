@@ -12,9 +12,9 @@ define([
     ]);
 
     module.config(function ($urlRouterProvider) {
-        $urlRouterProvider.when('/wwwroot#access_token=123sdfsdfdsfdsfsfsdfsdfdsf/', function(config){
-            debugger;
-        });
+        // $urlRouterProvider.when('/wwwroot#access_token=123sdfsdfdsfdsfsfsdfsdfdsf/', function(config){
+        //     debugger;
+        // });
     });
 
     couchPotato.configureApp(module);

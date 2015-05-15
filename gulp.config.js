@@ -43,14 +43,12 @@ module.exports = function() {
         srcStatic : [
             'src/index.html',
             'src/rconfig.js',
-            'src/app/includes.js',
-            'src/main.js'
+            'src/app/includes.js'
         ],
         destStatic : [
             'wwwroot/index.html',
             'wwwroot/rconfig.js',
-            'wwwroot/app/includes.js',
-            'wwwroot/main.js'
+            'wwwroot/app/includes.js'
         ],
         srcExtLib : 'src/lib/**/*',
         destExtLib :'wwwroot/lib/',
