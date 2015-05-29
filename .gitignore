@@ -1,9 +1,6 @@
 # Created by .gitignore support plugin (hsz.mobi)
-### JetBrains template
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
 ## Directory-based project format
-#.idea/
 /*.iml
 # if you remove the above rule, at least ignore user-specific stuff:
 .idea/workspace.xml
@@ -39,14 +36,11 @@ com_crashlytics_export_strings.xml
 *.suo
 
 node_modules/
-bin/
-obj/
 wwwroot/
 dist/
 lib
 *.log
 *.user
-*.DotSettings
 .tmp/
 .idea/
 bower_components/
