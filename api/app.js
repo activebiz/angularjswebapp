@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost:27017/activebizdb', function(err) {
     if(err) {
         console.log('Connection to database error', err);
     } else {
-        console.log('Connection to database successful');
+        console.log('Connection to mongodb database estlablished at URL : mongodb://localhost:27017/activebizdb');
     }
 });
 
@@ -71,6 +71,8 @@ app.use(function(err, req, res, next) {
 
 // THIS NEEDS TO BE IN
 var port = process.env.PORT || '8080';
-app.listen(port);
+app.listen(port, function(){
+  console.log('Express Server Stared at port #'+port);
+});
 
 module.exports = app;
