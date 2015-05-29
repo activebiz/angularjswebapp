@@ -10,7 +10,7 @@ define([
     'employees/module',
     'employees/controllers/EmployeesCtrl',
     'projects/module',
-    'projects/controllers/ProjectCtrl',
+    'projects/controllers/ProjectCtrl'
     //'contacts/module',
     //'contacts/controllers/ContactCtrl.js',
 
