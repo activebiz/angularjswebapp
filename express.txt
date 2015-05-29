@@ -1,0 +1,9 @@
+start express server
+$ cd api
+$ node app.js
+
+To pass variables
+examples:
+
+$ PORT=1234 node app.js
+

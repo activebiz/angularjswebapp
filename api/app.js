@@ -31,6 +31,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//This is for Angularjs website
+app.use('/wwwroot', express.static(__dirname + '../../wwwroot'));
+//This is for Angularjs website
+
 app.use('/', routes);
 app.use('/users', users);
 
@@ -65,14 +69,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
-// sets port 8080 to default or unless otherwise specified in the environment
-// app.set('port', process.env.PORT || 8080);
-
-app.get('/', function(req, res){
-    res.send('hello world'); 
-});
-
-// Only works on 3000 regardless of what I set environment port to or how I set [value] in app.set('port', [value]).
-app.listen(8080);
+// THIS NEEDS TO BE IN
+var port = process.env.PORT || '8080';
+app.listen(port);
 
 module.exports = app;
