@@ -10,12 +10,15 @@ Currently it includes following:
 - ui-router
 - simple gulp task manager
 - global exception handling in angularjs (using toastr)
+- mongodb database
+- express webapi (consuming mongodb)
 
 *Setup Steps*
 - install gulp globally and for dev
 - run npm install --save-dev
 - run npm install
-
+- Start MongoDb (environment dependent)
+- Start Express (environment dependent)
 
 <more to follow>
 
