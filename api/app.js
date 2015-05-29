@@ -11,9 +11,9 @@ var users = require('./routes/users');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/activebizdb', function(err) {
     if(err) {
-        console.log('connection error', err);
+        console.log('Connection to database error', err);
     } else {
-        console.log('connection successful');
+        console.log('Connection to database successful');
     }
 });
 
