@@ -50,3 +50,5 @@ lib
 .tmp/
 .idea/
 bower_components/
+data/
+npm-debug.log

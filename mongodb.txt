@@ -1,0 +1,4 @@
+mongod --nojournal --port 27017 --dbpath /home/ubuntu/workspace/data
+
+To run script
+node server.js
