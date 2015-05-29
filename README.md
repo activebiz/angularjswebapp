@@ -2,7 +2,7 @@
 
 **Objective** :
 
-The objective of this project is to demonstate a simple angularjs web application. 
+The objective of this project is to demonstate a simple angularjs web application using MEAN Stack. 
 
 Currently it includes following:
 - Angularjs
