@@ -7,15 +7,18 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var projects = require('./routes/projects');
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/activebizdb', function(err) {
-    if(err) {
-        console.log('Connection to database error', err);
-    } else {
-        console.log('Connection to mongodb database estlablished at URL : mongodb://localhost:27017/activebizdb');
-    }
-});
+// var mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost:27017/activebizdb', function(err) {
+//     if(err) {
+//         console.log('Connection to database error', err);
+//     } else {
+//         console.log('Connection to mongodb database estlablished at URL : mongodb://localhost:27017/activebizdb');
+//     }
+// });
+var monk = require("monk");
+var db = monk("mongodb://localhost:27017/activebizdb");
 
 var app = express();
 
@@ -35,8 +38,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/wwwroot', express.static(__dirname + '../../wwwroot'));
 //This is for Angularjs website
 
+// Make our db accessible to our router
+app.use(function(req,res,next){
+    req.db = db;
+    next();
+})
+
 app.use('/', routes);
 app.use('/users', users);
+app.use('/projects', projects);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
