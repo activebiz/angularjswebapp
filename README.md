@@ -5,6 +5,7 @@
 The objective of this project is to demonstate a simple angularjs web application using MEAN Stack. 
 
 Currently it includes following:
+- Node.js (https://nodejs.org/)
 - Angularjs (https://angularjs.org/)
 - Requirejs (http://requirejs.org/)
 - Twitter Bootstrap (http://getbootstrap.com/)
