@@ -16,7 +16,6 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
                         ends: data[i]["ends"]
                     };
                     projectViewModel.push(prod);
-
                 }
             }
             $scope.projects = projectViewModel;
@@ -26,7 +25,7 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
             if ($scope.newProject !== undefined) {
                 projectsService.add($scope.newProject);
                 $scope.projects.push($scope.newProject);
-                toastr.info($scope.newProject.name +' added!!');
+                toastr.info($scope.newProject.name + ' added!!');
                 $scope.newProject = undefined;
             }
         };
