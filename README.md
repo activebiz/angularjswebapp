@@ -5,11 +5,12 @@
 The objective of this project is to demonstate a simple angularjs web application using MEAN Stack. 
 
 Currently it includes following:
-- Angularjs
-- Twitter Bootstrap
-- ui-router
-- simple gulp task manager
-- global exception handling in angularjs (using toastr)
+- Angularjs (https://angularjs.org/)
+- Requirejs (http://requirejs.org/)
+- Twitter Bootstrap (http://getbootstrap.com/)
+- ui-router (https://github.com/angular-ui/ui-router)
+- simple gulp task manager (http://gulpjs.com/)
+- global exception handling in angularjs (using toastr https://github.com/CodeSeven/toastr)
 - mongodb database
 - express webapi (consuming mongodb)
 
