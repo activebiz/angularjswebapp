@@ -9,4 +9,14 @@ router.get('/', function(req, res, next) {
     });
 });
 
+router.post('/add', function(req, res) {
+    var db = req.db;
+    var collection = db.get('projects');
+    collection.insert(req.body, function(err, result){
+        res.send(
+            (err === null) ? { msg: '' } : { msg: err }
+        );
+    });
+});
+
 module.exports = router;

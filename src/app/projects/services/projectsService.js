@@ -9,7 +9,7 @@ define(['projects/module',
 
 		function getProjects(callback){
 
-			$http.get('api/project-list.json').success(function(data){
+			$http.get('https://angularjswebapp-activebiz.c9.io/projects').success(function(data){
 
 				callback(data);
 					
@@ -21,9 +21,29 @@ define(['projects/module',
 			});
 
 		}
+		
+		function addProject(data){
+
+			$http.post('https://angularjswebapp-activebiz.c9.io/projects/add', data)
+  				.success(function(data, status, headers, config) {
+  					debugger;
+    			// this callback will be called asynchronously
+    			// when the response is available
+  				})
+  				.error(function(data, status, headers, config) {
+  					debugger;
+  				$log.log('Error');
+    			// called asynchronously if an error occurs
+    			// or server returns response with an error status.
+  				});
+		}
+		
 		return{
 			get:function(callback){
 				getProjects(callback);
+			},
+			add:function(data){
+				addProject(data);
 			}
 		}
 	})
