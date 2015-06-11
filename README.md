@@ -17,8 +17,8 @@ Currently it includes following:
 - install gulp globally and for dev
 - run npm install --save-dev
 - run npm install
-- Start MongoDb (environment dependent)
-- Start Express (environment dependent)
+- Start MongoDb (see http://docs.mongodb.org/manual/installation/)
+- Start Express (see http://expressjs.com/starter/installing.html)
 
 <more to follow>
 
