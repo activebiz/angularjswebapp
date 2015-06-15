@@ -82,6 +82,10 @@ define([
         $urlRouterProvider.otherwise('/dashboard');
     });
 
+    app.constant('abSettings', {
+         baseUrl: location.protocol+ '//'+document.domain
+    });
+
     app.run(function($couchPotato, $rootScope, $state, $stateParams) {
         app.lazy = $couchPotato;
         $rootScope.$state = $state;

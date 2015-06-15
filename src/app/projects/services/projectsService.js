@@ -5,26 +5,20 @@ define(['projects/module',
 ], function(module, ng, couchPotato) {
 	"use strict";
 
-	module.registerService('projectsService', function($http, $log) {
+	module.registerService('projectsService', ['$http', '$log', 'abSettings', function($http, $log, abSettings) {
 
 		function getProjects(callback) {
-
-			$http.get('http://meandemo.activebiz.co.uk/api/projects').success(function(data) {
-
+			$http.get(abSettings.baseUrl + '/api/projects').success(function(data) {
 				callback(data);
-
 			}).error(function() {
-
 				$log.log('Error');
 				callback([]);
-
 			});
-
 		}
 
 		function addProject(data) {
 
-			$http.post('http://meandemo.activebiz.co.uk/api/projects/add', data)
+			$http.post(abSettings.baseUrl + '/api/projects/add', data)
 				.success(function(data, status, headers, config) {})
 				.error(function(data, status, headers, config) {
 					$log.log('Error');
@@ -39,5 +33,5 @@ define(['projects/module',
 				addProject(data);
 			}
 		}
-	})
+	}])
 })
