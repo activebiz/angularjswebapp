@@ -10,6 +10,7 @@ MongoClient.connect("mongodb://localhost:27017/activebizdb", function(err, db) {
     console.log("We are connected");
   }
 
+
   var projects = db.collection('projects', {
     w: 1
   }, function(err, collection) {

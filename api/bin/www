@@ -6,13 +6,14 @@
 
 var app = require('../app');
 var debug = require('debug')('api:server');
-var https = require('https');
+var https = require('http');
+/**var https = require('https');**/
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '8080');
+var port = normalizePort(process.env.PORT || '80');
 app.set('port', port);
 
 /**

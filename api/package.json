@@ -14,5 +14,8 @@
     "jade": "^1.9.2",
     "morgan": "^1.5.3",
     "serve-favicon": "^2.2.1"
+  },
+  "devDependencies": {
+    "monk": "^1.0.1"
   }
 }

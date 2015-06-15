@@ -32,10 +32,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use('/api', express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //This is for Angularjs website
-app.use('/wwwroot', express.static(__dirname + '../../wwwroot'));
+app.use('/', express.static(__dirname + '../../wwwroot'));
 //This is for Angularjs website
 
 // Make our db accessible to our router
@@ -44,9 +45,9 @@ app.use(function(req,res,next){
     next();
 })
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/projects', projects);
+app.use('/api/', routes);
+app.use('/api/users', users);
+app.use('/api/projects', projects);
 
 
 
@@ -82,9 +83,10 @@ app.use(function(err, req, res, next) {
 });
 
 // THIS NEEDS TO BE IN
-var port = process.env.PORT || '8080';
+var port = process.env.PORT || '80';
 app.listen(port, function(){
   console.log('Express Server Stared at port #'+port);
 });
 
 module.exports = app;
+
