@@ -24,6 +24,6 @@ Currently it includes following:
 
 <more to follow>
 
-## Demo is located at http://meandemo.activebiz.co.uk/
+## Demo : http://meandemo.activebiz.co.uk/
 
 *Current State - In Development* 
