@@ -16,19 +16,21 @@ define(['projects/module',
 			});
 		}
 
-		function addProject(data) {
+		function addProject(data, callback) {
 
 			$http.post(abSettings.baseUrl + '/api/projects/add', data)
-				.success(function(data, status, headers, config) {})
+				.success(function(data, status, headers, config) {
+					callback(status);
+				})
 				.error(function(data, status, headers, config) {
-					$log.log('Error');
+					callback(data);
 				});
 		}
 
 		function removeProject(data, callback) {
 			$http.post(abSettings.baseUrl + '/api/projects/remove', data)
 				.success(function(data, status, headers, config) {
-					callback(status)
+					callback(status);
 				})
 				.error(function(data, status, headers, config) {
 					callback(data);
@@ -39,8 +41,8 @@ define(['projects/module',
 			get: function(callback) {
 				getProjects(callback);
 			},
-			add: function(data) {
-				addProject(data);
+			add: function(data, callback) {
+				addProject(data, callback);
 			},
 			remove: function(data, callback) {
 				removeProject(data, callback);

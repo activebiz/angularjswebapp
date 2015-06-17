@@ -24,10 +24,17 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
 
         $scope.add = function() {
             if ($scope.newProject !== undefined) {
-                projectsService.add($scope.newProject);
-                $scope.projects.push($scope.newProject);
-                toastr.info($scope.newProject.name + ' added!!');
-                $scope.newProject = undefined;
+                projectsService.add($scope.newProject, function(status) {
+                    if (status === 200) {
+                        $scope.projects.push($scope.newProject);
+                        toastr.info($scope.newProject.name + ' added');
+                        $scope.newProject = undefined;
+                    }
+                    else {
+                        toastr.error('Error occurred while adding project');
+                    }
+                });
+                
             }
         };
 
@@ -37,7 +44,7 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
                 projectsService.remove(project, function(status) {
                     if (status === 200) {
                         $scope.projects.splice(index, 1);
-                        toastr.info(project.name + ' removed!!');
+                        toastr.info(project.name + ' removed');
                     }
                     else {
                         toastr.error('Error occurred while removing project');
