@@ -25,12 +25,25 @@ define(['projects/module',
 				});
 		}
 
+		function removeProject(data, callback) {
+			$http.post(abSettings.baseUrl + '/api/projects/remove', data)
+				.success(function(data, status, headers, config) {
+					callback(status)
+				})
+				.error(function(data, status, headers, config) {
+					callback(data);
+				});
+		}
+
 		return {
 			get: function(callback) {
 				getProjects(callback);
 			},
 			add: function(data) {
 				addProject(data);
+			},
+			remove: function(data, callback) {
+				removeProject(data, callback);
 			}
 		}
 	}])

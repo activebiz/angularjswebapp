@@ -9,6 +9,7 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
             for (var i = 0; i < data.length; i++) {
                 if (data[i] != undefined) {
                     var prod = {
+                        id: data[i]["_id"],
                         name: data[i]["name"],
                         budget: data[i]["budget"],
                         status: data[i]["status"],
@@ -27,6 +28,22 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
                 $scope.projects.push($scope.newProject);
                 toastr.info($scope.newProject.name + ' added!!');
                 $scope.newProject = undefined;
+            }
+        };
+
+        $scope.remove = function(index) {
+            var project = $scope.projects[index]
+            if (project !== undefined) {
+                projectsService.remove(project, function(status) {
+                    if (status === 200) {
+                        $scope.projects.splice(index, 1);
+                        toastr.info(project.name + ' removed!!');
+                    }
+                    else {
+                        toastr.error('Error occurred while removing project');
+                    }
+                });
+
             }
         };
     });
