@@ -1,19 +1,15 @@
 define([
-    // account
-    // 'auth/module',
-    // 'auth/models/User',
+    'dashboard/module',
+    'dashboard/controllers/dashboardCtrl',
+    'employees/module',
+    'employees/controllers/employeesCtrl',
+    'projects/module',
+    'projects/controllers/projectCtrl',
     'common/module',
     'common/services/authInterceptorService',
-    'dashboard/directives/bnSlideShow',
-    'dashboard/module',
-    'dashboard/controllers/DashboardCtrl',
-    'employees/module',
-    'employees/controllers/EmployeesCtrl',
-    'projects/module',
-    'projects/controllers/ProjectCtrl'
-    //'contacts/module',
-    //'contacts/controllers/ContactCtrl.js',
-
+    'misc/directives/bnSlideShow',
+    'misc/module',
+    'misc/controllers/miscCtrl'
 
 ], function () {
     'use strict';

@@ -17,12 +17,11 @@ define([
                 url: '/dashboard',
                 views: {
                     root: {
-                        controller: 'DashboardCtrl',
+                        controller: 'dashboardCtrl',
                         templateUrl: 'app/dashboard/views/dashboard.html',
                         resolve: {
                             deps: $couchPotatoProvider.resolveDependencies([
-                                'dashboard/directives/bnSlideShow',
-                                'dashboard/controllers/DashboardCtrl'
+                                'dashboard/controllers/dashboardCtrl'
                             ])
                         }
                     }

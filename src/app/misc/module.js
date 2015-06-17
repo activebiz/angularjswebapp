@@ -6,25 +6,29 @@ define([
 ], function (ng, couchPotato) {
     'use strict';
 
-    var module = ng.module('app.projects', [
+    var module = ng.module('app.misc', [
         'ui.router',
         'ngResource'
     ]);
 
     module.config(function ($stateProvider, $couchPotatoProvider) {
         $stateProvider
-            .state('projects', {
-                url: '/projects',
+            .state('misc', {
+                url: '/misc',
                 views: {
                     root: {
-                        controller: 'projectCtrl',
-                        templateUrl: 'app/projects/views/index.html',
+                        controller: 'miscCtrl',
+                        templateUrl: 'app/misc/views/index.html',
                         resolve: {
                             deps: $couchPotatoProvider.resolveDependencies([
-                                'projects/controllers/projectCtrl'
+                                'misc/directives/bnSlideShow',
+                                'misc/controllers/miscCtrl'
                             ])
                         }
                     }
+                },
+                data:{
+                    title: 'Misc.'
                 }
             });
     });

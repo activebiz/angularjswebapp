@@ -1,0 +1,26 @@
+<!-- MAIN CONTENT -->
+<div id="content"  ng-controller="miscCtrl">
+    <h2>{{title}}&nbsp;<small>{{person.name}}</small></h2>
+    <small>{{clock}}</small>
+    <h4>
+        Creating A Custom "Show" Directive In AngularJS
+    </h4>
+ 
+    <p>
+        <a ng-click="toggle()">Toggle Elements</a>
+    </p>
+ 
+    <ul>
+        <li bn-slide-show="isVisible" slide-show-duration="2000">
+ 
+            Using Show hide
+ 
+        </li>
+        <li ng-show="isVisible">
+ 
+            Using ngShow
+ 
+        </li>
+    </ul>
+</div>
+<!-- END MAIN CONTENT -->

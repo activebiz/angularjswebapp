@@ -17,11 +17,11 @@ define([
                 url: '/employees',
                 views: {
                     root: {
-                        controller: 'EmployeesCtrl',
+                        controller: 'employeesCtrl',
                         templateUrl: 'app/employees/views/employeelist.html',
                         resolve: {
                             deps: $couchPotatoProvider.resolveDependencies([
-                                'employees/controllers/EmployeesCtrl'
+                                'employees/controllers/employeesCtrl'
                             ])
                         }
                     }

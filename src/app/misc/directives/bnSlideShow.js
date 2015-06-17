@@ -1,4 +1,4 @@
-define(['dashboard/module',
+define(['misc/module',
     'angular',
     'angular-couch-potato',
     'angular-ui-router'

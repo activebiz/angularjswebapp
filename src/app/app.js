@@ -16,6 +16,7 @@ define([
         'ui.router',
         'ui.bootstrap',
         // // App
+        'app.misc',
         'app.dashboard',
         'app.employees',
         'app.projects'

@@ -2,7 +2,7 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
 
     'use strict';
 
-    module.registerController('ProjectCtrl', function($scope, projectsService, $templateCache) {
+    module.registerController('projectCtrl', function($scope, projectsService, $templateCache) {
         $scope.title = 'Project List';
         projectsService.get(function(data) {
             var projectViewModel = [];

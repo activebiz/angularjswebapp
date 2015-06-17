@@ -2,7 +2,7 @@ define(['employees/module', 'toastr'], function(module, toastr) {
 
     'use strict';
 
-    module.registerController('EmployeesCtrl', function($scope) {
+    module.registerController('employeesCtrl', function($scope) {
         $scope.title = 'Employee List';
         $scope.employees = [{
             name: 'Preyash Desai',

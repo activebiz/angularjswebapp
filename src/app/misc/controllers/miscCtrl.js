@@ -1,9 +1,9 @@
-define(['dashboard/module','toastr'], function(module,toastr) {
+define(['misc/module','toastr'], function(module,toastr) {
 
     'use strict';
 
-    module.registerController('DashboardCtrl', function($scope) {
-        $scope.title = 'Dashboard';
+    module.registerController('miscCtrl', function($scope) {
+        $scope.title = 'Misc.';
         $scope.person = {
             name: 'Preyash Desai'
         };
