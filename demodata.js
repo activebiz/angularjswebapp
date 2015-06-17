@@ -23,21 +23,21 @@ MongoClient.connect("mongodb://localhost:27017/activebizdb", function(err, db) {
   projects.insert({
     "name": "Sharepoint Upgrade",
     "budget": "5000.00",
-    "status": "ACTIVE",
+    "isActive": true,
     "starts": "01-21-2013",
     "ends": "02-30-2018"
   });
   projects.insert({
     "name": "Windows Upgrade",
     "budget": "20000.00",
-    "status": "ACTIVE",
+    "isActive": true,
     "starts": "01-21-2014",
     "ends": "02-30-2016"
   });
   projects.insert({
     "name": "MIS Systems",
     "budget": "30000.00",
-    "status": "INACTIVE",
+    "isActive": false,
     "starts": "05-21-2016",
     "ends": "92-30-2019"
   });  
