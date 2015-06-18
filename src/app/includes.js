@@ -5,6 +5,7 @@ define([
     'employees/controllers/employeesCtrl',
     'projects/module',
     'projects/controllers/projectCtrl',
+    'projects/controllers/addNewProjectCtrl',
     'common/module',
     'common/services/authInterceptorService',
     'misc/directives/bnSlideShow',

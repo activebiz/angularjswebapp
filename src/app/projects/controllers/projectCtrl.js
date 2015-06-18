@@ -2,8 +2,21 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
 
     'use strict';
 
-    module.registerController('projectCtrl', function($scope, projectsService, $templateCache) {
+    module.registerController('projectCtrl', function($scope, $modal, projectsService, $templateCache) {
         $scope.title = 'Project List';
+
+        $scope.open = function() {
+            var modalInstance = $modal.open({
+                templateUrl: 'addNewProjectContent.html',
+                controller: 'addNewProjectCtrl'
+            });
+            modalInstance.result.then(function(newProject) {
+                $scope.projects.push(newProject);
+            }, function() {
+                toastr.info('Project Added');
+            });
+        };
+
         projectsService.get(function(data) {
             var projectViewModel = [];
             for (var i = 0; i < data.length; i++) {
@@ -21,22 +34,6 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
             }
             $scope.projects = projectViewModel;
         });
-
-        $scope.add = function() {
-            if ($scope.newProject !== undefined) {
-                projectsService.add($scope.newProject, function(status) {
-                    if (status === 200) {
-                        $scope.projects.push($scope.newProject);
-                        toastr.info($scope.newProject.name + ' added');
-                        $scope.newProject = undefined;
-                    }
-                    else {
-                        toastr.error('Error occurred while adding project');
-                    }
-                });
-                
-            }
-        };
 
         $scope.remove = function(index) {
             var project = $scope.projects[index]

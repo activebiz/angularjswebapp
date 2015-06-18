@@ -21,7 +21,8 @@ define([
                         templateUrl: 'app/projects/views/index.html',
                         resolve: {
                             deps: $couchPotatoProvider.resolveDependencies([
-                                'projects/controllers/projectCtrl'
+                                'projects/controllers/projectCtrl',
+                                'projects/controllers/addNewProjectCtrl'
                             ])
                         }
                     }

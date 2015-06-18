@@ -1,54 +1,90 @@
 <!-- MAIN CONTENT -->
-<div id="content"  ng-controller="projectCtrl">
+<div id="content" ng-controller="projectCtrl">
     <h2>{{title}}&nbsp;</h2>
     <h4>Add/Remove projects to the mongodb projects collection using webapi</h4>
     <div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Budget (in GBP)</th>
-                <th>Status</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody ng-repeat="project in projects">
-            <tr>
-                <td ng-bind-html="project.id" style="display:none;">{{project.id}}</td>
-                <td ng-bind-html="project.name">{{project.name}}</td>
-                <td ng-bind-html="project.budget">{{project.budget}}</td>
-                <td ng-bind-html="project.status">{{project.status}}</td>
-                <td ng-bind-html="project.starts">{{project.starts}}</td>
-                <td ng-bind-html="project.ends">{{project.ends}}</td>
-                <td><button class="btn btn-xs btn-primary" ng-click="remove($index)"><span class="glyphicon glyphicon-remove"></span></button></td>
-            </tr>
-        </tbody>        
-    </table>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Budget (in GBP)</th>
+                    <th>Status</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="project in projects">
+                <tr>
+                    <td ng-bind-html="project.id" style="display:none;">{{project.id}}</td>
+                    <td ng-bind-html="project.name">{{project.name}}</td>
+                    <td ng-bind-html="project.budget">{{project.budget}}</td>
+                    <td ng-bind-html="project.status">{{project.status}}</td>
+                    <td ng-bind-html="project.starts">{{project.starts}}</td>
+                    <td ng-bind-html="project.ends">{{project.ends}}</td>
+                    <td>
+                        <button class="btn btn-xs btn-primary" ng-click="remove($index)"><span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-        <form class="form-inline">
-        <div class="form-group">
-            <label for="Name">Name</label>
-            <input type="text" ng-model="newProject.name"></input>    
+
+    <script type="text/ng-template" id="addNewProjectContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Add new project</h3>
         </div>
-        <div class="form-group">
-            <label for="Name">Budget (in GBP)</label>
-            <input type="text" ng-model="newProject.budget"></input>    
-        </div>        
-        <div class="form-group">
-            <label for="Status">Status</label>
-            <input type="text" ng-model="newProject.status"></input>    
-        </div>        
-        <div class="form-group">
-            <label for="Starts">Start Date</label>
-            <input type="text" ng-model="newProject.starts"></input>    
-        </div>        
-        <div class="form-group">
-            <label for="Ends">End Date</label>
-            <input type="text" ng-model="newProject.ends"></input>    
-        </div>        
-        <button ng-click="add()" type="submit"  class="btn btn-default">Add Project</button>
-    </form>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" ng-model="newProject.name"></input>
+            </div>
+            <div class="form-group">
+                <label for="Name">Budget (in GBP)</label>
+                <input type="text" ng-model="newProject.budget"></input>
+            </div>
+            <div class="form-group">
+                <label for="Status">Status</label>
+                <input type="text" ng-model="newProject.status"></input>
+            </div>
+            <div class="form-group">
+                <label for="Starts">Start Date</label>
+                <input type="text" ng-model="newProject.starts"></input>
+            </div>
+            <div class="form-group">
+                <label for="Ends">End Date</label>
+                <input type="text" ng-model="newProject.ends"></input>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="add()">Add</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    <button class="btn btn-default" ng-click="open()">Add New Project</button>
+    <!--<form class="form-inline">-->
+    <!--    <div class="form-group">-->
+    <!--        <label for="Name">Name</label>-->
+    <!--        <input type="text" ng-model="newProject.name"></input>-->
+    <!--    </div>-->
+    <!--    <div class="form-group">-->
+    <!--        <label for="Name">Budget (in GBP)</label>-->
+    <!--        <input type="text" ng-model="newProject.budget"></input>-->
+    <!--    </div>-->
+    <!--    <div class="form-group">-->
+    <!--        <label for="Status">Status</label>-->
+    <!--        <input type="text" ng-model="newProject.status"></input>-->
+    <!--    </div>-->
+    <!--    <div class="form-group">-->
+    <!--        <label for="Starts">Start Date</label>-->
+    <!--        <input type="text" ng-model="newProject.starts"></input>-->
+    <!--    </div>-->
+    <!--    <div class="form-group">-->
+    <!--        <label for="Ends">End Date</label>-->
+    <!--        <input type="text" ng-model="newProject.ends"></input>-->
+    <!--    </div>-->
+    <!--    <button ng-click="add()" type="submit" class="btn btn-default">Add Project</button>-->
+    <!--</form>-->
 </div>
 <!-- END MAIN CONTENT -->
