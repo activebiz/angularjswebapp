@@ -7,7 +7,7 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
 
         $scope.open = function() {
             var modalInstance = $modal.open({
-                templateUrl: 'addNewProjectContent.html',
+                templateUrl: 'app/projects/views/addNewProjectPopup.html',
                 controller: 'addNewProjectCtrl'
             });
             modalInstance.result.then(function(newProject) {
