@@ -11,9 +11,10 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
                 controller: 'addNewProjectCtrl'
             });
             modalInstance.result.then(function(newProject) {
-                $scope.projects.push(newProject);
-            }, function() {
-                toastr.info('Project Added');
+                if (newProject != undefined) {
+                    $scope.projects.push(newProject);
+                    toastr.info('Project '+ newProject.name +' added');
+                }
             });
         };
 

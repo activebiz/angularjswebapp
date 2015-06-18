@@ -12,9 +12,6 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
             if ($scope.newProject !== undefined) {
                 projectsService.add($scope.newProject, function(status) {
                     if (status === 200) {
-                        // $scope.projects.push($scope.newProject);
-                        toastr.info($scope.newProject.name + ' added');
-                        // $modalInstance.dismiss('cancel');
                         $modalInstance.close($scope.newProject);
                         $scope.newProject = undefined;
                     }
