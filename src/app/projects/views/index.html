@@ -11,6 +11,7 @@
                     <th>Status</th>
                     <th>Start Date</th>
                     <th>End Date</th>
+                    <th>Completed in %</th>
                     <th>Delete</th>
                 </tr>
             </thead>
@@ -19,9 +20,12 @@
                     <td ng-bind-html="project.id" style="display:none;">{{project.id}}</td>
                     <td ng-bind-html="project.name">{{project.name}}</td>
                     <td ng-bind-html="project.budget">{{project.budget}}</td>
-                    <td ng-bind-html="project.status">{{project.status}}</td>
+                    <td ng-bind-html="project.isActive">{{project.isActive}}</td>
                     <td ng-bind-html="project.starts">{{project.starts}}</td>
                     <td ng-bind-html="project.ends">{{project.ends}}</td>
+                    <td>
+                        <progressbar class="progress-striped active" max="100" value="project.percentComplete" type="danger"><i>{{project.percentComplete}}</i></progressbar>
+                    </td>
                     <td>
                         <button class="btn btn-xs btn-primary" ng-click="remove($index)"><span class="glyphicon glyphicon-remove"></span>
                         </button>
@@ -29,6 +33,7 @@
                 </tr>
             </tbody>
         </table>
+        </div>
     </div>
     <button class="btn btn-default" ng-click="open()">Add New Project</button>
 </div>

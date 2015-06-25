@@ -8,7 +8,8 @@ define([
 
     var module = ng.module('app.projects', [
         'ui.router',
-        'ngResource'
+        'ngResource',
+        'ui.bootstrap'
     ]);
 
     module.config(function ($stateProvider, $couchPotatoProvider) {

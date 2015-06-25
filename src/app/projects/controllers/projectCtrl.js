@@ -26,9 +26,10 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
                         id: data[i]["_id"],
                         name: data[i]["name"],
                         budget: data[i]["budget"],
-                        status: data[i]["status"],
+                        isActive: data[i]["isActive"],
                         starts: data[i]["starts"],
-                        ends: data[i]["ends"]
+                        ends: data[i]["ends"],
+                        percentComplete: data[i]["percentComplete"]
                     };
                     projectViewModel.push(prod);
                 }
