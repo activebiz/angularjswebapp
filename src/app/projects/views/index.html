@@ -1,7 +1,7 @@
 <!-- MAIN CONTENT -->
 <div id="content" ng-controller="projectCtrl">
     <h2>{{title}}&nbsp;</h2>
-    <h4>Add/Remove projects to the mongodb projects collection using webapi</h4>
+    <h4>Projects List</h4>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -11,8 +11,8 @@
                     <th>Status</th>
                     <th>Start Date</th>
                     <th>End Date</th>
-                    <th>Completed in %</th>
-                    <th>Delete</th>
+                    <th>Completed (in %)</th>
+                    <!-- <th>Delete</th> -->
                 </tr>
             </thead>
             <tbody ng-repeat="project in projects">
@@ -26,10 +26,10 @@
                     <td>
                         <progressbar class="progress-striped active" max="100" value="project.percentComplete" type="danger"><i>{{project.percentComplete}}</i></progressbar>
                     </td>
-                    <td>
+<!--                     <td>
                         <button class="btn btn-xs btn-primary" ng-click="remove($index)"><span class="glyphicon glyphicon-remove"></span>
                         </button>
-                    </td>
+                    </td> -->
                 </tr>
             </tbody>
         </table>

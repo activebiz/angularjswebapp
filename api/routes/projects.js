@@ -30,6 +30,7 @@ router.post('/remove', function(req, res) {
     var db = req.db;
     var collection = db.get('projects');
     console.log('Deleting project: ' + req.body.id);
+    console.log('test');
     collection.remove({
         '_id': new BSON.ObjectID(req.body.id)
     }, function(err, result) {

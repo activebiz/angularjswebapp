@@ -10,7 +10,17 @@ define(['projects/module', 'toastr', 'projects/services/projectsService'], funct
 
         $scope.add = function() {
             if ($scope.newProject !== undefined) {
-                projectsService.add($scope.newProject, function(status) {
+
+                    var prod = {
+                        name: $scope.newProject.name,
+                        budget: $scope.newProject.budget,
+                        isActive: $scope.newProject.isActive,
+                        starts: $scope.newProject.starts,
+                        ends: $scope.newProject.ends,
+                        percentComplete: $scope.newProject.percentComplete,
+                    };
+
+                projectsService.add(prod, function(status) {
                     if (status === 200) {
                         $modalInstance.close($scope.newProject);
                         $scope.newProject = undefined;
